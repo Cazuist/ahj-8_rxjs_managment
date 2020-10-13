@@ -2,7 +2,7 @@
   "name": "ahj-8",
   "version": "1.0.0",
   "main": "src/index.js",
-  "repository": "https://github.com/Cazuist/ahj-8_rxjs_managment.git",
+  "repository": "https://github.com/Cazuist/ahj-8_rxjs_managment",
   "author": "Cazuist",
   "license": "MIT",
   "scripts": {
@@ -28,7 +28,6 @@
     "jest": "^26.4.2",
     "mini-css-extract-plugin": "^0.11.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "puppeteer": "^5.2.1",
     "terser-webpack-plugin": "^4.1.0",
     "url-loader": "^4.1.0",
     "webpack": "^4.44.1",
@@ -40,7 +39,6 @@
     "core-js": "3",
     "moment": "^2.29.0",
     "rxjs": "^6.6.3",
-    "uuid": "^8.3.0",
-    "ws": "^7.3.1"
+    "uuid": "^8.3.0"
   }
 }

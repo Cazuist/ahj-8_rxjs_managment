@@ -111,7 +111,7 @@ body {
   border-bottom: none;
 }
 
-.item:first-of-type) {
+.item:first-of-type {
   border-top: none;
 }
 
@@ -206,8 +206,4 @@ body {
 
 .hidden {
   display: none;
-}
-
-.blocked {
-  pointer-events: none;
 }
