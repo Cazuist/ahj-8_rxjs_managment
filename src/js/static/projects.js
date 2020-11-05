@@ -9,7 +9,7 @@ const projects = [
       {
         id: v4(),
         name: 'Create server',
-        done: false,
+        done: true,
       },
       {
         id: v4(),
@@ -31,7 +31,7 @@ const projects = [
       {
         id: v4(),
         name: 'Main menu',
-        done: false,
+        done: true,
       },
       {
         id: v4(),
@@ -78,7 +78,7 @@ const projects = [
       {
         id: v4(),
         name: 'l18n',
-        done: false,
+        done: true,
       },
       {
         id: v4(),

@@ -1,7 +1,11 @@
-import StateManager from './StateManager';
-import projects from './projects';
+import StatsWidget from './widgets/StatsWidget';
+import TasksWidget from './widgets/TasksWidget';
+import Store from './state/Store';
+import projects from './static/projects';
 
-// const dashboard = new DashboardManager(document.body, 'ws://localhost:7070');
-const dashboard = new StateManager(document.body, projects);
+const store = new Store(projects);
+const stats = new StatsWidget(document.querySelector('.stat_widget_box'), store);
+const tasks = new TasksWidget(document.querySelector('.tasks_widget_box'), store);
 
-dashboard.init();
+stats.init();
+tasks.init();
