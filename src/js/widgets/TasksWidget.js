@@ -42,7 +42,7 @@ export default class TasksWidget {
     this.store.state$.pipe(
       distinctUntilChanged(),
     )
-      .subscribe(({ projects, type, update }) => {
+      .subscribe(({ type, projects, update }) => {
         if (type === '__INITIALIZATION__' || type === 'CHANGE') {
           this.drawProjectTask(projects);
           return;
@@ -98,6 +98,7 @@ export default class TasksWidget {
   registerEvents() {
     const selectBoxEl = document.querySelector('.select-box');
     const taskBoxEl = document.querySelector('.task-box');
+    const currentPrjEl = document.querySelector('.open-project');
 
     document.querySelector('.open-project')
       .addEventListener('mouseover', () => {
@@ -114,20 +115,18 @@ export default class TasksWidget {
       if (!classList.contains('task-status')) return;
 
       const checkedTaskId = target.closest('.task-item').dataset.id;
-      const status = target.closest('.task-item').classList.contains('done');
 
-      this.store.checkTask([checkedTaskId, status]);
+      this.store.checkTask([checkedTaskId]);
     });
 
     selectBoxEl.addEventListener('click', (event) => {
       const { target, target: { classList } } = event;
 
       if (!classList.contains('select-name')) return;
+
       selectBoxEl.classList.add('hidden');
 
-      const currentTarget = this.store.projects.find(({ isCurrent }) => isCurrent);
-
-      if (target.textContent === currentTarget.name) {
+      if (target.textContent === currentPrjEl.textContent) {
         return;
       }
 

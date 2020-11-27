@@ -2,15 +2,16 @@ import { Subject } from 'rxjs';
 import { startWith, scan } from 'rxjs/operators';
 import reducer from './reducer';
 import Actions from '../static/Actions';
+import projects from '../static/projects';
 
 export default class Store {
-  constructor(projects) {
+  constructor() {
     this.projects = projects;
     this.actions$ = new Subject();
     this.state$ = this.actions$.asObservable().pipe(
       startWith({ type: '__INITIALIZATION__' }),
       scan((state, action) => reducer(state, action),
-        { projects: this.projects, type: '__INITIALIZATION__', update: null }),
+        { projects, type: '__INITIALIZATION__', update: null }),
     );
   }
 
